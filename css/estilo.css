@@ -1,0 +1,382 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*Título do game*/
+h2 {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    animation: title 3s infinite;
+}
+
+@keyframes title {
+    0% {transform: scale(1.0);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1.0);}
+}
+
+
+
+/*Pause*/
+#pause {
+    position: absolute;
+    top: 70px;
+    left: 20%;
+    font-size: 30px;
+    color: red;
+    display: none;
+}
+
+
+
+
+/*Janela como jogar*/
+#janela-como-jogar {
+     position: absolute;
+     top: 0px;
+     width: 100%;
+     height: 0vh;
+     padding: 0px;
+     background-color: rgba(0, 0, 0, 0.925);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     color: white;
+     overflow: hidden;
+}
+
+#janela-como-jogar p {
+    width: 60%;
+    font-size: 14px;
+}
+
+#janela-como-jogar button {
+     background-color: red;
+     padding: 5px 10px;
+     border-radius: 10px;
+     width: 100px;
+     cursor: pointer;
+}
+
+#janela-como-jogar button:hover {
+    color: white;
+}
+
+
+
+/*Campo onde roda o game*/
+.game-board {
+    width: 100%;
+    height: 80vh;
+    border-bottom: 10px solid black;
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(rgba(255, 0, 0, 0.623), #E0F6FF);
+}
+
+
+/*Contagem para iniciar*/
+#contagem-inicial {
+    text-align: center;
+    font-size: 70px;
+    color: orangered;
+}
+
+
+
+/*Pipe e animação*/
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    animation: pipe-animation 1.2s infinite linear;
+    display: none;
+}
+
+.pipee {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    animation: pipe-animation 1.1s infinite linear;
+    display: none;
+}
+
+.pipeee {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    animation: pipe-animation 1000ms infinite linear;
+    display: none;
+}
+
+.pipeeee {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    animation: pipe-animation 900ms infinite linear;
+    display: none;
+}
+
+.pipeeeee {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    animation: pipe-animation 800ms infinite linear;
+    display: none;
+}
+
+@keyframes pipe-animation {
+    from{right: -80px;}
+    to{right: 100%;}
+}
+
+
+
+/*Mario e animação*/
+.mario {
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump {
+    animation: jump 700ms ease-out;
+}
+
+@keyframes jump {
+    0%{bottom: 0;}
+    40%{bottom: 180px;}
+    50%{bottom: 180px;}
+    60%{bottom: 180px;}
+    100%{bottom: 0;}
+}
+
+
+
+/*Nuvem e animação*/
+.nuvem {
+    width: 350px;
+    margin-top: 5px;
+    position: absolute;
+    animation: nuvem 25s infinite linear;
+}
+
+@keyframes nuvem {
+    from{right: -350px}
+    to{right: 100%;}
+}
+
+
+
+
+/*Placar do jogo e pontos*/
+.placar{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 20px auto;
+    width: 20%;
+}
+
+
+.pontos {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+}
+
+
+
+
+
+
+/*Placar final e pontos finais*/
+.placar-fim {
+    width: 60%;
+    padding: 20px;
+    border: 2px solid black;
+    margin-top: 25vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.pontos-fim {
+    font-size: 20px;
+    color: black;
+}
+
+
+
+
+/*Mario que aparece na inicialização do game*/
+.marioInicio {
+    width: 50px;
+    padding-right: 10px;
+    display: block;
+    margin: 20px auto;
+}
+
+.marioInicioo {
+    width: 50px;
+    display: block;
+    margin: 15px auto;
+}
+
+
+
+
+
+/*Botoões de ação*/
+#iniciarJogo {
+    padding: 10px;
+    width: 150px;
+    margin: 10px auto;
+    border-radius: 5px;
+    background-color: orangered;
+    border: transparent;
+    color: black;
+}
+
+#iniciarJogo:hover {
+    color: white;
+    cursor: pointer;
+}
+
+
+#btnReiniciar {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: orangered;
+    color: black;
+}
+
+
+#btnReiniciar:hover{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+#btn-pular {
+    color: white;
+    border: 1px solid white;
+    background-color: red;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#btn-personagem {
+     position: absolute;
+     left: 20px;
+     color: black;
+     border: 1px solid white;
+     background-color: yellow;
+     padding: 10px;
+     width: 180px;
+     border-radius: 10px;
+     cursor: pointer;
+}
+
+#btn-sair {
+    position: absolute;
+    right: 20px;
+    color: white;
+    border: 1px solid white;
+    background-color: black;
+    padding: 10px;
+    width: 180px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#como-jogar button {
+    background-color: red;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid red;
+    color: white;
+    cursor: pointer;
+}
+
+#como-jogar button:hover {
+    color: black;
+}
+
+#btn-musica {
+    color: white;
+    border: 1px solid white;
+    background-color: black;
+    padding: 5px;
+    width: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 1px;
+    font-size: 9px;
+}
+
+#btn-pause {
+    color: white;
+    border: 1px solid white;
+    background-color: red;
+    padding: 5px;
+    width: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 1px;
+    font-size: 9px;
+    display: none;
+}
+
+#btns {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+
+
+
+
+/*footer*/
+#footer {
+    position: absolute;
+    bottom: -10px;
+    width: 100%;
+}
+
+#footer p {
+    text-align: center;
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+/*Responsivo*/
+@media (max-width: 700px) {
+    .pontos{font-size: 18px;}
+    .pontos-fim{font-size: 14px;}
+    .placar{width: 30%}
+    h3{font-size: 18px;}
+    #btnReiniciar, #iniciarJogo {font-size: 12px;}
+    #btn-personagem {width: 80px; font-size: 10px;}
+    #btn-sair {width: 80px; font-size: 10px;}
+    h2 {font-size: 25px;}
+}
